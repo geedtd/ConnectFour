@@ -48,3 +48,9 @@ div {
 .puckHolder:hover {
   background-color: slategrey;
 }
+.red {
+  background-color: red;
+}
+.yellow {
+  background-color: yellow;
+}
