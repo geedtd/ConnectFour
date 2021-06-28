@@ -28,7 +28,10 @@ h1 {
   }
 section {
   justify-content: center;
-
+  text-align: center;
+}
+.status {
+  font-size: 20px;
 }
 section.gameboard {
     margin: auto;
