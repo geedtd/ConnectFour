@@ -17,6 +17,7 @@ for ( const boardDiv of board ) {
     //const isClicked = false;
     boardDiv.addEventListener('click', puckClick)
 
+resetBtn.addEventListener('click', resetGame)
 }
 
 //functions
@@ -28,8 +29,6 @@ function init () {
     gameWon = false
 }
 function puckClick(e) {
-    console.log(e)
-    resetBtn.removeAttribute('hidden')
     const classList = e.target.classList
 
     if (gameWon || classList[2] === 'clicked') {
@@ -38,22 +37,19 @@ function puckClick(e) {
     if (player1Turn) {
         player1Turn = !player1Turn
         classList.add('red')
-        status.innerText = "Player 2's Turn"
+        status.innerText = "Player 2's Turn 🟡 "
     } else {
         player1Turn = !player1Turn
         classList.add('yellow')
-        status.innerText = "Player 1's Turn"
+        status.innerText = "Player 1's Turn 🔴 "
     }
+
     classList.add('clicked')
-    // const colorChange = e.target
-
-    // if () {
-
-    // }
-
+    console.log(e)
+    resetBtn.removeAttribute('hidden')
 }
-function reset() {
-
+function resetGame() {
+    console.log('reset')
 }
-console.log(board)
+
 
