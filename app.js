@@ -1,14 +1,23 @@
+//constants (sounds,etc)
+
 //HTML Elements
 const status = document.querySelector('.status')
 const resetBtn = document.querySelector('.reset')
+const board = document.getElementsByClassName('.gameboard')
+//
 
-//game constants  
+//variables 
 const redPuck = '0' //will change to background-color changing event
-const yellowPuck = '1' //will change to background-color changing event
-//gaem variables 
+const yellowPuck = '1' //will change to background-color changing event 
 let gameWon = null;
 let player1Turn = true;
-//game listener
+
+//event listeners
+for ( const boardDiv of board ) {
+    
+    boardDiv.addEventListener('click', puckClick)
+
+}
 
 //functions
 init()
@@ -18,6 +27,11 @@ function init () {
     resetBtn.setAttribute('hidden', true)
     gameWon = false
 }
-function puckClick() {
+function puckClick(e) {
+    const colorChange = e.target
+
+    if
+}
+function reset() {
 
 }
