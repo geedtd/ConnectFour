@@ -48,8 +48,13 @@ function puckClick(e) {
     console.log(e)
     resetBtn.removeAttribute('hidden')
 }
-function resetGame() {
-    console.log('reset')
+function resetGame(e) {
+    console.log(e.target)
 }
+
+//get nodeList? from div squares, split up into arrays representing sections that a winning 4 consecutive pucks could be played 
+//create function (most likely a for loop but will check array iterators, that checks to see if there are 4 consecutive pucks in said arrays
+//if winning conditions are met, execute function that will display winner text, who won and stops the game from continued to be played
+
 
 
