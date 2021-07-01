@@ -27,6 +27,12 @@ function init () {
     status.innerText = 'Click on a circle to start'
     resetBtn.setAttribute('hidden', true)
     gameWon = false
+    for (const boardDiv of board) {
+        boardDiv.classList.remove('clicked')
+        boardDiv.classList.remove('red')
+        boardDiv.classList.remove('yellow')
+
+    }
 }
 function puckClick(e) {
     const classList = e.target.classList
@@ -48,8 +54,8 @@ function puckClick(e) {
     console.log(e)
     resetBtn.removeAttribute('hidden')
 }
-function resetGame(e) {
-    console.log(e.target)
+function resetGame() {
+    init()
 }
 
 //get nodeList? from div squares, split up into arrays representing sections that a winning 4 consecutive pucks could be played 
