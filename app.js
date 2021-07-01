@@ -3,9 +3,9 @@
 //HTML Elements
 const status = document.querySelector('.status')
 const resetBtn = document.querySelector('.reset')
-const board = document.getElementsByClassName('gameboard')
+const board = document.querySelectorAll('.puckHolder')
 //
-
+console.log(board)
 //variables 
 const redPuck = '0' //will change to background-color changing event
 const yellowPuck = '1' //will change to background-color changing event 
