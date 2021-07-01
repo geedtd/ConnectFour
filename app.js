@@ -8,11 +8,11 @@ const board = document.querySelectorAll('.puckHolder')
 console.log(board)
 //variables 
 let gameWon = null;
-let player1Turn = true;
+let player1Turn ;
 
 
 let divsArr = [...board]
-divsArr = divsArr.map(x => x = null)
+// divsArr = divsArr.map(x => x = null)
 
 //event listeners
 for ( const boardDiv of board ) {
@@ -31,8 +31,12 @@ function init () {
         boardDiv.classList.remove('clicked')
         boardDiv.classList.remove('red')
         boardDiv.classList.remove('yellow')
-
     }
+    player1Turn = true
+    
+    divsArr = divsArr.map(x => x = null)
+
+
 }
 
 function puckClick(e) {
@@ -42,15 +46,30 @@ function puckClick(e) {
         return
     }
     if (player1Turn) {
+        let boardPuck = board[(Array.from(board).indexOf(e.target))+7]
         player1Turn = !player1Turn
         classList.add('red')
         status.innerText = "Player 2's Turn 🟡 "
         divsArr[Array.from(board).indexOf(e.target)] = 1
+        classList.add('clicked')
+       if (board[(Array.from(board).indexOf(e.target))+7].classList[2]) {
+           console.log('puck below') 
+       }else {
+           console.log('nothing below')
+       }
+    
+        //divsArr[index of clicked element on board array]
     } else {
         player1Turn = !player1Turn
         classList.add('yellow')
         status.innerText = "Player 1's Turn 🔴 "
         divsArr[Array.from(board).indexOf(e.target)] = 2
+        if (board[(Array.from(board).indexOf(e.target))+7].classList[2]) {
+            console.log('puck below') 
+        }else {
+            console.log('nothing below')
+        }
+        //stackPucks(e)
 
     }
     console.log(divsArr)
@@ -78,10 +97,20 @@ function checkWin() {
     }
     console.log('party')
 }
+// function stackPucks(e) {
+//     console.log(board[Array.from(board).indexOf(this(e.target))])
+//     //if (board[Array.from(board).indexOf(e.target)]) {
+
+//     // }
+// }
 
 //get nodeList? from div squares, split up into arrays representing sections that a winning 4 consecutive pucks could be played 
 //create function (most likely a for loop but will check array iterators, that checks to see if there are 4 consecutive pucks in said arrays
 //if winning conditions are met, execute function that will display winner text, who won and stops the game from continued to be played
 
 
-
+// if (board[Array.from(board).indexOf(e.target)].classList[2] === 'clicked') {
+//     console.log('something below')
+// } else {
+//     console.log('nothing below')
+// }
