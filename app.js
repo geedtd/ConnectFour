@@ -12,6 +12,18 @@ const yellowPuck = '1' //will change to background-color changing event
 let gameWon = null;
 let player1Turn = true;
 
+
+const divsArr = [...board]
+console.log(divsArr)
+const indexArr = divsArr.map(x => x = divsArr.indexOf(x))
+console.log(indexArr)
+//divsArr.forEach(element => console.log(element))
+redIndx = []
+yellowIndx = []
+for (i = 0; i < length.divsArr; i++) {
+
+}
+
 //event listeners
 for ( const boardDiv of board ) {
     //const isClicked = false;
@@ -49,13 +61,18 @@ function puckClick(e) {
         classList.add('yellow')
         status.innerText = "Player 1's Turn 🔴 "
     }
-
+    console.log(divsArr)
     classList.add('clicked')
     console.log(e)
     resetBtn.removeAttribute('hidden')
 }
 function resetGame() {
     init()
+}
+
+
+function checkWin() {
+
 }
 
 //get nodeList? from div squares, split up into arrays representing sections that a winning 4 consecutive pucks could be played 
