@@ -13,16 +13,17 @@ let gameWon = null;
 let player1Turn = true;
 
 
-const divsArr = [...board]
+let divsArr = [...board]
 console.log(divsArr)
-const indexArr = divsArr.map(x => x = divsArr.indexOf(x))
-console.log(indexArr)
-//divsArr.forEach(element => console.log(element))
-redIndx = []
-yellowIndx = []
-for (i = 0; i < length.divsArr; i++) {
+// const red = 'div.puckHolder.red.clicked'
+// const yellow = 'div.puckHolder.yellow.clicked'
 
-}
+divsArr = divsArr.map(x => x = null)
+// console.log(indexArr)
+//divsArr.forEach(element => console.log(element))
+// redIndx = []
+// yellowIndx = []
+
 
 //event listeners
 for ( const boardDiv of board ) {
@@ -56,15 +57,20 @@ function puckClick(e) {
         player1Turn = !player1Turn
         classList.add('red')
         status.innerText = "Player 2's Turn 🟡 "
+        divsArr[Array.from(board).indexOf(e.target)] = 1
     } else {
         player1Turn = !player1Turn
         classList.add('yellow')
         status.innerText = "Player 1's Turn 🔴 "
+        divsArr[Array.from(board).indexOf(e.target)] = 2
+
     }
     console.log(divsArr)
     classList.add('clicked')
-    console.log(e)
+    //console.log(board.indexOf(e.target))
     resetBtn.removeAttribute('hidden')
+    //console.log(indexArr)
+    checkWin()
 }
 function resetGame() {
     init()
@@ -72,7 +78,11 @@ function resetGame() {
 
 
 function checkWin() {
-
+    // for (i = 0; i < length.divsArr; i++) {
+    //     if (divsArr[i] = red) {
+             console.log('party')
+    //     }
+    // }
 }
 
 //get nodeList? from div squares, split up into arrays representing sections that a winning 4 consecutive pucks could be played 
