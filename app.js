@@ -42,23 +42,30 @@ function init () {
 function puckClick(e) {
     const classList = e.target.classList
 
+    let parameter = [(Array.from(board).indexOf(e.target))+7]
+
+
+    function checkBelow(parameter) {
+        parameter = this.parameter
+        if (board.parameter.classList[2] === 'clicked') {
+            console.log('puck below') 
+        }else {
+            parameter = parameter + 7
+            checkBelow(this.parameter)
+        }
+
+    }
+
     if (gameWon || classList[2] === 'clicked') {
         return
     }
     if (player1Turn) {
-        let boardPuck = board[(Array.from(board).indexOf(e.target))+7]
         player1Turn = !player1Turn
         classList.add('red')
         status.innerText = "Player 2's Turn 🟡 "
         divsArr[Array.from(board).indexOf(e.target)] = 1
         classList.add('clicked')
-       if (board[(Array.from(board).indexOf(e.target))+7].classList[2]) {
-           console.log('puck below') 
-       }else {
-           console.log('nothing below')
-       }
-    
-        //divsArr[index of clicked element on board array]
+        checkBelow(parameter)
     } else {
         player1Turn = !player1Turn
         classList.add('yellow')
