@@ -7,31 +7,18 @@ const board = document.querySelectorAll('.puckHolder')
 //
 console.log(board)
 //variables 
-const redPuck = '0' //will change to background-color changing event
-const yellowPuck = '1' //will change to background-color changing event 
 let gameWon = null;
 let player1Turn = true;
 
 
 let divsArr = [...board]
-console.log(divsArr)
-// const red = 'div.puckHolder.red.clicked'
-// const yellow = 'div.puckHolder.yellow.clicked'
-
 divsArr = divsArr.map(x => x = null)
-// console.log(indexArr)
-//divsArr.forEach(element => console.log(element))
-// redIndx = []
-// yellowIndx = []
-
 
 //event listeners
 for ( const boardDiv of board ) {
-    //const isClicked = false;
     boardDiv.addEventListener('click', puckClick)
-
-resetBtn.addEventListener('click', resetGame)
 }
+resetBtn.addEventListener('click', resetGame)
 
 //functions
 init()
@@ -47,6 +34,7 @@ function init () {
 
     }
 }
+
 function puckClick(e) {
     const classList = e.target.classList
 
@@ -67,22 +55,28 @@ function puckClick(e) {
     }
     console.log(divsArr)
     classList.add('clicked')
-    //console.log(board.indexOf(e.target))
     resetBtn.removeAttribute('hidden')
-    //console.log(indexArr)
     checkWin()
 }
+
 function resetGame() {
     init()
 }
 
+function renderWin() {
+    gameWon = !gameWon
+    if (!player1Turn) {
+        status.innerText = ('Player 1 Is the Winner')
+    } else {
+        status.innerText = ('Player 2 Is the Winner')
+    }
+}
 
 function checkWin() {
-    // for (i = 0; i < length.divsArr; i++) {
-    //     if (divsArr[i] = red) {
-             console.log('party')
-    //     }
-    // }
+    if (divsArr[0] === 1 && divsArr[1] === 1 && divsArr[2] === 1 && divsArr[3] === 1) {
+        renderWin()
+    }
+    console.log('party')
 }
 
 //get nodeList? from div squares, split up into arrays representing sections that a winning 4 consecutive pucks could be played 

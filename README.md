@@ -1,5 +1,13 @@
 # ConnectFour
 Connect Four Game 
+The game I chose is Connect 4, I chose this game because while thinking of this game and how to construct it, I knew that I'd be working with arrays in new challenging ways. I also played this game with my brother when I was younger and it's a nice memory.
+
+*** Click below to play game ***
+https://connect4-gerardo.netlify.app
+
+*** Screenshots will go here ***
+
+Pseudocode
 1. Define Constants -
 resetButton - after play starts, will appear and upon click reset the board   game 
 statusMessage - will inform of player turn, if game is won, or no winner
