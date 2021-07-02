@@ -4,6 +4,7 @@
 const status = document.querySelector('.status')
 const resetBtn = document.querySelector('.reset')
 const board = document.querySelectorAll('.puckHolder')
+const nightMode = document.querySelector('.nightBtn')
 //
 console.log(board)
 //variables 
@@ -19,6 +20,7 @@ for ( const boardDiv of board ) {
     boardDiv.addEventListener('click', puckClick)
 }
 resetBtn.addEventListener('click', resetGame)
+nightMode.addEventListener('click', nightBtn)
 
 //functions
 init()
@@ -42,19 +44,16 @@ function init () {
 function puckClick(e) {
     const classList = e.target.classList
 
-    let parameter = [(Array.from(board).indexOf(e.target))+7]
-
-
-    function checkBelow(parameter) {
-        parameter = this.parameter
-        if (board.parameter.classList[2] === 'clicked') {
-            console.log('puck below') 
-        }else {
-            parameter = parameter + 7
-            checkBelow(this.parameter)
+    function checkBelow() {
+        let x = 0;
+        console.log(x)
+        console.log(board[(Array.from(board).indexOf(e.target))+ x ].classList[2])
+        const newIndexBelow = x + 7
+        if (newIndexBelow < 34) {
+            checkBelow(newIndexBelow)
         }
 
-    }
+    } 
 
     if (gameWon || classList[2] === 'clicked') {
         return
@@ -65,22 +64,27 @@ function puckClick(e) {
         status.innerText = "Player 2's Turn 🟡 "
         divsArr[Array.from(board).indexOf(e.target)] = 1
         classList.add('clicked')
-        checkBelow(parameter)
-    } else {
-        player1Turn = !player1Turn
-        classList.add('yellow')
-        status.innerText = "Player 1's Turn 🔴 "
-        divsArr[Array.from(board).indexOf(e.target)] = 2
-        if (board[(Array.from(board).indexOf(e.target))+7].classList[2]) {
+
+        if (checkBelow(7)) {
             console.log('puck below') 
         }else {
             console.log('nothing below')
         }
-        //stackPucks(e)
-
+    } else {
+        console.log(checkBelow())
+        if (checkBelow()) {
+            console.log(checkBelow())
+            player1Turn = !player1Turn
+            classList.add('yellow')
+            status.innerText = "Player 1's Turn 🔴 "
+            divsArr[Array.from(board).indexOf(e.target)] = 2
+            classList.add('clicked') 
+        }else {
+            console.log('nothing below')
+        }
     }
+
     console.log(divsArr)
-    classList.add('clicked')
     resetBtn.removeAttribute('hidden')
     checkWin()
 }
@@ -98,11 +102,15 @@ function renderWin() {
     }
 }
 
-function checkWin() {
+function checkWin () {
     if (divsArr[0] === 1 && divsArr[1] === 1 && divsArr[2] === 1 && divsArr[3] === 1) {
         renderWin()
-    }
-    console.log('party')
+    }else return
+    console.log('winner is decided')
+}
+
+function nightBtn() {
+    console.log('clicked nightmode')
 }
 // function stackPucks(e) {
 //     console.log(board[Array.from(board).indexOf(this(e.target))])
@@ -121,3 +129,9 @@ function checkWin() {
 // } else {
 //     console.log('nothing below')
 // }
+
+// player1Turn = !player1Turn
+        // classList.add('yellow')
+        // status.innerText = "Player 1's Turn 🔴 "
+        // divsArr[Array.from(board).indexOf(e.target)] = 2
+        // classList.add('clicked')
