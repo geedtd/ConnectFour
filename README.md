@@ -9,10 +9,15 @@ https://connect4-gerardo.netlify.app
   
 https://www.wikihow.com/Play-Connect-4  
 
-*** Screenshots will go here ***  
-<img src='https://i.imgur.com/L8ToIrn.png' height='400' >  
+*** Screenshots ***  
+  A winning combo will result in a message conveying who has won  
+<img src='https://i.imgur.com/L8ToIrn.png' height='400' >   
 
-*** Technology Used ***
+If you click on a floating space (no puck below it), an error message will ask
+you to choose a bottom div, or a space with a puck below  
+<img src='https://i.imgur.com/CeNkOS5.png' height='400' >
+
+*** Technology Used ***  
 HTML, CSS, Javascript, Deal Struck with Cthulhu
 
 Pseudocode
