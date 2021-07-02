@@ -7,6 +7,9 @@ https://connect4-gerardo.netlify.app
 
 *** Screenshots will go here ***
 
+*** Technology Used ***
+HTML, CSS, Javascript, Deal Struck with Cthulhu
+
 Pseudocode
 1. Define Constants -
 resetButton - after play starts, will appear and upon click reset the board   game 

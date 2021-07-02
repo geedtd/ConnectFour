@@ -122,8 +122,10 @@ function checkWin () {
     let connect4 = winningCombos[i]
     console.log(connect4)
     if (connect4.every(indx=>divsArr[indx] === 1)){
+        renderWin()
         console.log('player1 won')
     }else if (connect4.every(indx=>divsArr[indx] === 2)) {
+        renderWin()
         console.log('player 2 won')
     }
 
