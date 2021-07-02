@@ -125,7 +125,14 @@ function checkWin () {
 }
 
 function nightBtn() {
+    
     document.body.classList.toggle('dark-theme')
+    console.log(nightMode)
+    if (nightMode.innerText === 'Light Mode') {
+        nightMode.innerText = 'Dark Mode'
+    } else {
+        nightMode.innerText = 'Light Mode'   
+    }
     console.log('clicked nightmode')
 }
 
