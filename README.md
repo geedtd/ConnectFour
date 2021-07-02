@@ -5,7 +5,8 @@ The game I chose is Connect 4, I chose this game because while thinking of this 
 *** Click to play game ***
 https://connect4-gerardo.netlify.app
 
-*** Instruction On How To Pay Connect 4 ***
+*** Instruction On How To Pay Connect 4 *** 
+\n
 https://www.wikihow.com/Play-Connect-4
 
 *** Screenshots will go here ***
