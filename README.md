@@ -9,7 +9,7 @@ https://connect4-gerardo.netlify.app
 https://www.wikihow.com/Play-Connect-4
 
 *** Screenshots will go here ***
-<img src='https://i.imgur.com/L8ToIrn.png'>
+<img src='https://i.imgur.com/L8ToIrn.png' height='400' >
 
 *** Technology Used ***
 HTML, CSS, Javascript, Deal Struck with Cthulhu
