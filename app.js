@@ -36,9 +36,7 @@ console.log(board)
 let gameWon = null;
 let player1Turn ;
 
-
 let divsArr = [...board]
-// divsArr = divsArr.map(x => x = null)
 
 //event listeners
 for ( const boardDiv of board ) {
@@ -98,7 +96,6 @@ function puckClick(e) {
         status.innerText += "\nPlease click on a space with a puck \n below or an empty bottom space"
     }
 
-    //console.log(divsArr)
     resetBtn.removeAttribute('hidden')
     checkWin()
 }
@@ -117,10 +114,8 @@ function renderWin() {
 }
 
 function checkWin () {
-    console.log(divsArr)
-   for ( i = 0; i < winningCombos.length ; i++) {
+    for ( i = 0; i < winningCombos.length ; i++) {
     let connect4 = winningCombos[i]
-    console.log(connect4)
     if (connect4.every(indx=>divsArr[indx] === 1)){
         renderWin()
         console.log('player1 won')
@@ -128,12 +123,11 @@ function checkWin () {
         renderWin()
         console.log('player 2 won')
     }
-
-    // divsArr
    }
 }
 
 function nightBtn() {
+    document.body.classList.toggle('dark-theme')
     console.log('clicked nightmode')
 }
 
