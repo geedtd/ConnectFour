@@ -107,9 +107,9 @@ function resetGame() {
 function renderWin() {
     gameWon = !gameWon
     if (!player1Turn) {
-        status.innerText = ('Player 1 Is the Winner')
+        status.innerText = ('🎉 \n 🎉Player 1 Is the Winner!! 🎉\n 🎉')
     } else {
-        status.innerText = ('Player 2 Is the Winner')
+        status.innerText = ('🎉 \n 🎉Player 2 Is the Winner!! 🎉\n 🎉')
     }
 }
 
@@ -118,10 +118,8 @@ function checkWin () {
     let connect4 = winningCombos[i]
     if (connect4.every(indx=>divsArr[indx] === 1)){
         renderWin()
-        console.log('player1 won')
     }else if (connect4.every(indx=>divsArr[indx] === 2)) {
         renderWin()
-        console.log('player 2 won')
     }
    }
 }
@@ -131,32 +129,5 @@ function nightBtn() {
     console.log('clicked nightmode')
 }
 
-//get nodeList? from div squares, split up into arrays representing sections that a winning 4 consecutive pucks could be played 
-//create function (most likely a for loop but will check array iterators, that checks to see if there are 4 consecutive pucks in said arrays
-//if winning conditions are met, execute function that will display winner text, who won and stops the game from continued to be played
 
 
-// if (board[Array.from(board).indexOf(e.target)].classList[2] === 'clicked') {
-//     console.log('something below')
-// } else {
-//     console.log('nothing below')
-// }
-
-// player1Turn = !player1Turn
-        // classList.add('yellow')
-        // status.innerText = "Player 1's Turn 🔴 "
-        // divsArr[Array.from(board).indexOf(e.target)] = 2
-        // classList.add('clicked')
-        
-
-
-        // function checkBelow() {
-        //     let x = 0;
-        //     console.log(x)
-        //     console.log(board[(Array.from(board).indexOf(e.target))+ x ].classList[2])
-        //     // const newIndexBelow = x + 7
-        //     // if (newIndexBelow < 34) {
-        //     //     checkBelow(newIndexBelow)
-        //     // }
-    
-        // } 

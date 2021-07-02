@@ -17,7 +17,7 @@ html {
   font-size: 62.5%
 }
 body {
-  padding-top: 8vh;
+  padding-top: 5vh;
   margin: 0;
   height: 25vh;
   display: flex;
@@ -38,7 +38,7 @@ footer {
 }
 section.gameboard {
     margin: auto;
-    margin-top: 3vh;
+    margin-top: 2vh;
     display: grid;
     grid-template-rows: repeat(6, 9vmin);
     grid-template-columns: repeat(7, 9vmin);
@@ -80,4 +80,7 @@ body.dark-theme p {
 }
 body.dark-theme footer {
   color: white;
+}
+body.dark-theme .gameboard {
+  background-color: lightblue;
 }
