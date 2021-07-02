@@ -1,5 +1,5 @@
 //constants (sounds,etc)
-
+import { winningCombos } from "./winningCombos"
 //HTML Elements
 const status = document.querySelector('.status')
 const resetBtn = document.querySelector('.reset')
