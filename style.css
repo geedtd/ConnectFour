@@ -37,6 +37,7 @@ footer {
   height: 75px;
 }
 section.gameboard {
+    border-radius: 10px;
     margin: auto;
     margin-top: 2vh;
     display: grid;
@@ -47,6 +48,7 @@ section.gameboard {
     border: 1px solid black ;
     padding: 15px;
     margin-bottom: 3vh;
+    box-shadow: 10px 10px 5px rgb(39, 38, 38);
 }
 div {
   border: 3px solid black;
@@ -56,6 +58,7 @@ div {
 }
 .puckHolder{
   background-color: white;
+  box-shadow: inset 3px 3px 1px rgb(48, 48, 48);
 }
 .puckHolder:hover {
   background-color: slategrey;
@@ -83,4 +86,6 @@ body.dark-theme footer {
 }
 body.dark-theme .gameboard {
   background-color: lightblue;
+  box-shadow: 10px 10px 5px gainsboro;
 }
+
