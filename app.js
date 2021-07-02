@@ -56,21 +56,23 @@ function puckClick(e) {
         return
     }
     if (board[(Array.from(board).indexOf(e.target))+ 7 ].classList[2]) {
-    if (player1Turn) {
-        player1Turn = !player1Turn
-        classList.add('red')
-        status.innerText = "Player 2's Turn 🟡 "
-        divsArr[Array.from(board).indexOf(e.target)] = 1
-        classList.add('clicked')
+        if (player1Turn) {
+            player1Turn = !player1Turn
+            classList.add('red')
+            status.innerText = "Player 2's Turn 🟡 "
+            divsArr[Array.from(board).indexOf(e.target)] = 1
+            classList.add('clicked')
 
-    } else {
-        player1Turn = !player1Turn
-        classList.add('yellow')
-        status.innerText = "Player 1's Turn 🔴 "
-        divsArr[Array.from(board).indexOf(e.target)] = 2
-        classList.add('clicked') 
+        } else {
+            player1Turn = !player1Turn
+            classList.add('yellow')
+            status.innerText = "Player 1's Turn 🔴 "
+            divsArr[Array.from(board).indexOf(e.target)] = 2
+            classList.add('clicked') 
+        }     
+    }else {
+        
     }
-}
 
     console.log(divsArr)
     resetBtn.removeAttribute('hidden')
