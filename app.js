@@ -8,6 +8,7 @@ const nightMode = document.querySelector('.nightBtn')
 //
 console.log(board)
 //variables 
+
 let gameWon = null;
 let player1Turn ;
 
@@ -34,9 +35,14 @@ function init () {
         boardDiv.classList.remove('clicked')
         boardDiv.classList.remove('red')
         boardDiv.classList.remove('yellow')
+        if (boardDiv.classList[1] === 'hiddenPuck') {
+            boardDiv.classList.add('clicked')
+        }
     }
-    player1Turn = true
-    
+    for (i = 42; i < length.board; i++) {
+        board[i].classList.add('clicked')
+    }
+    player1Turn = true     
     divsArr = divsArr.map(x => x = null)
 
 
@@ -49,6 +55,7 @@ function puckClick(e) {
     if (gameWon || classList[2] === 'clicked') {
         return
     }
+    if (board[(Array.from(board).indexOf(e.target))+ 7 ].classList[2]) {
     if (player1Turn) {
         player1Turn = !player1Turn
         classList.add('red')
@@ -63,6 +70,7 @@ function puckClick(e) {
         divsArr[Array.from(board).indexOf(e.target)] = 2
         classList.add('clicked') 
     }
+}
 
     console.log(divsArr)
     resetBtn.removeAttribute('hidden')

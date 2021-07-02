@@ -64,3 +64,6 @@ div {
 .yellow {
   background-color: #ffef96;
 }
+.hiddenPuck {
+  display: none ;
+}
