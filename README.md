@@ -35,10 +35,10 @@ init function will be called -
 -winnerVariable is set to false, will evaluate to true once winning conditon is met
 -call render function which will show state of game/players turns, board values
 render function -
-4. Define the winning combos
--winning combos are near impossible to hard code since there are so many options, will research more on this to properly code
--thinking of a way to check 4 equal consecutive values in a form that maps the 6 columns, 7 rows, and 12 slanted rows (this kind of direction  / \ ) that would be able to hold at least 4 values
-5. Handle click events -
+4. Handle click events -
 -will change value of cellDiv clicked on that pertains to the lowest available space in that column 
 -will not allow more than 6 assignment clicks per column
+5. Define the winning combos
+-winning combos are near impossible to hard code since there are so many options, will research more on this to properly code
+-thinking of a way to check 4 equal consecutive values in a form that maps the 6 columns, 7 rows, and 12 slanted rows (this kind of direction  / \ ) that would be able to hold at least 4 values
 6. Replay button will call init, thus the game values are null
