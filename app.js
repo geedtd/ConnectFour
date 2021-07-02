@@ -2,7 +2,7 @@
 const winningCombos = [
     //horizontal winning combos
     [0,1,2,3],[1,2,3,4],[2,3,4,5],[3,4,5,6],
-    [7,8,9,10][8,9,10,11],[9,10,11,12],[10,11,12,13],
+    [7,8,9,10],[8,9,10,11],[9,10,11,12],[10,11,12,13],
     [14,15,16,17],[15,16,17,18],[16,17,18,19],[17,18,19,20],
     [21,22,23,24],[22,23,24,25],[23,24,25,26],[24,25,26,27],
     [28,29,30,31],[29,30,31,32],[30,31,32,33],[31,32,33,34],
@@ -20,7 +20,7 @@ const winningCombos = [
     //diagonal winning combos
     [14,22,30,38],[7,15,23,31],[15,23,31,39],[0,8,16,24],[8,16,24,32],[16,24,32,40],
     [1,9,17,25],[9,17,25,33],[17,25,33,41],[2,10,18,26],[10,18,26,34],[3,11,19,27],
-    [21,,15,9,3],[28,22,16,10],[22,16,10,4],[35,29,23,17],[29,23,17,11],[23,17,11,5],
+    [21,15,9,3],[28,22,16,10],[22,16,10,4],[35,29,23,17],[29,23,17,11],[23,17,11,5],
     [35,29,23,17],[29,23,17,11],[23,17,11,5],[36,30,24,18],[30,24,18,12],[24,18,12,6],
     [37,31,25,19],[31,25,19,13],[38,32,26,20]
 ]
@@ -98,7 +98,7 @@ function puckClick(e) {
         status.innerText += "\nPlease click on a space with a puck \n below or an empty bottom space"
     }
 
-    console.log(divsArr)
+    //console.log(divsArr)
     resetBtn.removeAttribute('hidden')
     checkWin()
 }
@@ -117,10 +117,14 @@ function renderWin() {
 }
 
 function checkWin () {
+    console.log(divsArr)
    for ( i = 0; i < winningCombos.length ; i++) {
     let connect4 = winningCombos[i]
-    if (connect4.every(indx=>divsArr[indx].classList.contains(1))){
+    console.log(connect4)
+    if (connect4.every(indx=>divsArr[indx] === 1)){
         console.log('player1 won')
+    }else if (connect4.every(indx=>divsArr[indx] === 2)) {
+        console.log('player 2 won')
     }
 
     // divsArr
